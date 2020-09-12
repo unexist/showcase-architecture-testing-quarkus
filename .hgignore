@@ -1,0 +1,4 @@
+quarkus-jqassistant-showcase.iml
+target/
+.idea/
+.mvn/
