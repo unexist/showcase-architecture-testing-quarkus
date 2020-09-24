@@ -1,0 +1,13 @@
+== Test
+
+[[ok:TestInMethodName]]
+[source,cypher,role=constraint,severity=minor]
+.Alle Testmethoden müssen `test` als Präfix haben.
+----
+MATCH
+    (t:Junit5:Test:Class)
+WHERE NOT
+    t.name =~ "test.*"
+RETURN
+    t AS InvalidTestClass
+----

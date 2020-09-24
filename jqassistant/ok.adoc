@@ -1,0 +1,4 @@
+[[ok:Default]]
+[role=group,includesConstraints="ok:*(blocker)"]
+=== Ok Regeln
+Hier wird eine Gruppe definiert, die alle Constraints und Concepts vereint.

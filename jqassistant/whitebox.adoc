@@ -1,0 +1,11 @@
+=== Whitebox View
+
+[[architecture:BoundedContextOverview]]
+[source,cypher,role=concept,requiresConcepts="java-ddd:*",reportType="plantuml-component-diagram"]
+.Dokumentation für Bounded Contexts.
+----
+MATCH (bc1:DDD:BoundedContext)
+    OPTIONAL MATCH (bc1)-[d:DEFINES_DEPENDENCY|DEPENDS_ON]->(bc2)
+WHERE bc1 <> bc2
+    RETURN bc1, d, bc2
+----

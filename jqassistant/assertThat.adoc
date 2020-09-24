@@ -1,0 +1,16 @@
+=== AssertJ
+
+[[ok:AssertThat]]
+[source,cypher,role=constraint,severity=minor]
+.Alle Aufrufe von `assertThat` müssen von `AssertJ` sein.
+----
+MATCH
+    (assertType:Type)-[:DECLARES]->(assertMethod)
+WHERE
+    assertType.fqn =~ 'org.assertj.core.api.*'
+        AND assertMethod.signature =~ '.* assertThat.*'
+SET
+    assertMethod:AssertJ:Assert
+RETURN
+    assertMethod
+----
