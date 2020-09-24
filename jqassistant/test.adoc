@@ -4,10 +4,11 @@
 [source,cypher,role=constraint,severity=minor]
 .Alle Testmethoden müssen `test` als Präfix haben.
 ----
-MATCH
-    (t:Junit5:Test:Class)
+MATCH (meth:Method:Java)
+    -[:ANNOTATED_BY]->(annotation:Java:Annotation)
+    -[:OF_TYPE]->(type:Java {fqn: "net.jqwik.api.Property"})
 WHERE NOT
-    t.name =~ "test.*"
+    meth.name =~ "test.*"
 RETURN
-    t AS InvalidTestClass
+    meth AS InvalidTestMethod
 ----

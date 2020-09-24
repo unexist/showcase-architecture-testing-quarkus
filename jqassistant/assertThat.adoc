@@ -5,12 +5,12 @@
 .Alle Aufrufe von `assertThat` müssen von `AssertJ` sein.
 ----
 MATCH
-    (assertType:Type)-[:DECLARES]->(assertMethod)
+    (t:Type)-[:DECLARES]->(meth)
 WHERE
-    assertType.fqn =~ 'org.assertj.core.api'
-        AND assertMethod.signature =~ '.* assertThat.*'
+    NOT t.fqn =~ 'org.assertj.core.api.*'
+        AND meth.signature =~ '.* assertThat.*'
 SET
-    assertMethod:AssertJ:Assert
+    meth:AssertJ:Assert
 RETURN
-    assertMethod
+    meth
 ----
