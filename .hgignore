@@ -2,3 +2,4 @@ quarkus-jqassistant-showcase.iml
 target/
 .idea/
 .mvn/
+.jqwik-database
