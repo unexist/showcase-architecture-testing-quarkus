@@ -21,8 +21,8 @@ public class UnusedUtil {
      **/
 
     public static void recursive(int stopAfter) {
-        if (10 < stopAfter) {
-            recursive(stopAfter);
+        if (0 < stopAfter) {
+            recursive(stopAfter - 1);
         }
     }
 }

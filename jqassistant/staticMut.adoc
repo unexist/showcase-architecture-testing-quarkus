@@ -8,8 +8,8 @@ MATCH (c:Class)-[:DECLARES]->(f:Field)<-[w:WRITES]-(m:Method)
 WHERE
     EXISTS(f.static) AND NOT EXISTS(f.final)
 RETURN
-    c.name as Class,
-    m.name as Method,
-    w.lineNumber as Line
-    f.name as Name
+    c.name as InClass,
+    m.name as theMethod,
+    w.lineNumber as writesInLine,
+    f.name as toStaticField
 ----

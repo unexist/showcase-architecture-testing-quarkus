@@ -7,7 +7,7 @@
 MATCH
     (assertType:Type)-[:DECLARES]->(assertMethod)
 WHERE
-    assertType.fqn =~ 'org.assertj.core.api.*'
+    assertType.fqn =~ 'org.assertj.core.api'
         AND assertMethod.signature =~ '.* assertThat.*'
 SET
     assertMethod:AssertJ:Assert
