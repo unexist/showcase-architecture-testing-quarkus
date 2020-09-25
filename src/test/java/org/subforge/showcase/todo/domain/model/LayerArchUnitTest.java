@@ -23,7 +23,7 @@ public class LayerArchUnitTest {
     private final JavaClasses classes = new ClassFileImporter().importPackages("org.subforge");
 
     @Test
-    public void testLayerdArch() {
+    public void testLayeredArch() {
         layeredArchitecture()
                 .layer("Application")
                 .definedBy("..application..")
