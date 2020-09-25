@@ -24,7 +24,7 @@ public class TodoBase {
     @NotNull
     private String description;
 
-    private Boolean isDone;
+    private Boolean done;
 
     @NotNull
     private DueDate dueDate;
@@ -46,11 +46,11 @@ public class TodoBase {
     }
 
     public Boolean getDone() {
-        return isDone;
+        return done;
     }
 
     public void setDone(Boolean done) {
-        isDone = done;
+        this.done = done;
     }
 
     public DueDate getDueDate() {
@@ -61,7 +61,7 @@ public class TodoBase {
         this.dueDate = dueDate;
 
         if (null != dueDate.getStart() && null != dueDate.getDue()){
-            this.isDone = dueDate.getStart().isBefore(dueDate.getDue());
+            this.done = dueDate.getStart().isBefore(dueDate.getDue());
         }
     }
 }
