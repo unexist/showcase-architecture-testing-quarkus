@@ -180,6 +180,7 @@
                                 <group>java-ddd:Default</group>
                                 <group>architecture:Default</group>
                                 <group>ok:Default</group>
+                                <group>cyclic:Default</group>
                             </groups>
                         </configuration>
                     </execution>

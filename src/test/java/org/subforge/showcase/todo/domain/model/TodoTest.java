@@ -29,7 +29,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @PropertyDefaults(tries = 10)
 public class TodoTest {
-    private static final int UNIVERSITY_START_AS_UNIXTIME = 1601031600;
+    private static final int FUTURE_TIME = 1609426800;
 
     @Property
     public void testCreateTodo(@ForAll String anyStr) {
@@ -44,7 +44,7 @@ public class TodoTest {
 
     @Property
     public void testCreateTodoWithDate(@ForAll String anyStr,
-                                       @ForAll @IntRange(min = TodoTest.UNIVERSITY_START_AS_UNIXTIME) int unixtime) {
+                                       @ForAll @IntRange(min = TodoTest.FUTURE_TIME) int unixtime) {
         Todo todo = new Todo();
 
         todo.setTitle(anyStr);
