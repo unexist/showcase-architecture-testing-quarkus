@@ -13,9 +13,11 @@ package org.subforge.showcase.todo.domain.model;
 
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
+import com.tngtech.archunit.junit.AnalyzeClasses;
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
 
+@AnalyzeClasses(packages = "org.subforge.showcase")
 public class CyclesArchUnitTest {
     private final JavaClasses classes = new ClassFileImporter().importPackages("org.subforge");
 
