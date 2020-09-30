@@ -14,6 +14,7 @@ package org.subforge.showcase.todo.domain.model.todo;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 @DDD.AggregateRoot
+@DDD.Layer.DomainLayer
 public class Todo extends TodoBase {
     private int id;
 

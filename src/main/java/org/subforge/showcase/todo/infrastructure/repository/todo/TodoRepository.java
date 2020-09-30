@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @DDD.Repository
+@DDD.Layer.InfrastructureLayer
 @ApplicationScoped
 public class TodoRepository {
     private static final Logger LOGGER = LoggerFactory.getLogger(TodoRepository.class);

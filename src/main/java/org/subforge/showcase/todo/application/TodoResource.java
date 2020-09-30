@@ -17,6 +17,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 import org.subforge.showcase.todo.domain.model.todo.Todo;
 import org.subforge.showcase.todo.domain.model.todo.TodoBase;
 import org.subforge.showcase.todo.domain.service.todo.TodoService;
@@ -37,6 +38,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Path("/todo")
+@DDD.Layer.ApplicationLayer
 public class TodoResource {
 
     @Inject

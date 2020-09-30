@@ -16,6 +16,7 @@ import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 import javax.validation.constraints.NotNull;
 
 @DDD.Entity
+@DDD.Layer.DomainLayer
 public class TodoBase {
 
     @NotNull

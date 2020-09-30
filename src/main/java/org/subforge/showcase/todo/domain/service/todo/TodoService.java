@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 @DDD.Service
+@DDD.Layer.DomainLayer
 @ApplicationScoped
 public class TodoService {
 
