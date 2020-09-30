@@ -9,7 +9,7 @@
  * See the file COPYING for details.
  **/
 
-@DDD.BoundedContext(name = "Todo", dependsOn = { "OtherBC" })
-package org.subforge.showcase.todo.domain.model.todo;
+@DDD.BoundedContext(name = "OtherBC", dependsOn = { "Todo" })
+package org.subforge.showcase.todo.domain.model.otherbc;
 
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
