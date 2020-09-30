@@ -31,7 +31,7 @@ public class LayerArchUnitTest {
                 .definedBy("..model..")
             .layer("Service")
                 .definedBy("..service..")
-                .layer("Repository")
+            .layer("Repository")
                 .definedBy("..repository..")
             .layer("Infrastructure")
                 .definedBy("..infrastructure..")
