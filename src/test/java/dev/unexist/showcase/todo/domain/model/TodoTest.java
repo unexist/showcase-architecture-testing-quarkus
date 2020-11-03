@@ -2,7 +2,7 @@
  * @package Quarkus-jqAssistant-Showcase
  *
  * @file Contrived tests with PBT
- * @copyright 2019 Christoph Kappel <unexist@subforge.org>
+ * @copyright 2020 Christoph Kappel <christoph@unexist.dev>
  * @version $Id$
  *
  * This program can be distributed under the terms of the GNU GPLv2.
