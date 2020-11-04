@@ -10,6 +10,6 @@
  **/
 
 @DDD.BoundedContext(name = "Todo", dependsOn = { "OtherBC" })
-package dev.unexist.showcase.todo.domain.model.todo;
+package dev.unexist.showcase.todo.domain.todo;
 
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;

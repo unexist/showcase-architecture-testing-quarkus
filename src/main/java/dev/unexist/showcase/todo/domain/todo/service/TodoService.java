@@ -9,12 +9,12 @@
  * See the file COPYING for details.
  **/
 
-package dev.unexist.showcase.todo.domain.service.todo;
+package dev.unexist.showcase.todo.domain.todo.service;
 
+import dev.unexist.showcase.todo.domain.todo.model.Todo;
+import dev.unexist.showcase.todo.domain.todo.model.TodoBase;
+import dev.unexist.showcase.todo.domain.todo.repository.TodoRepository;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
-import dev.unexist.showcase.todo.domain.model.todo.Todo;
-import dev.unexist.showcase.todo.domain.model.todo.TodoBase;
-import dev.unexist.showcase.todo.infrastructure.repository.todo.TodoRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

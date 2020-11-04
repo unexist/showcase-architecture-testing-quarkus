@@ -9,7 +9,7 @@
  * See the file COPYING for details.
  **/
 
-package dev.unexist.showcase.todo.domain.model;
+package dev.unexist.showcase.todo.domain.todo.model;
 
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;

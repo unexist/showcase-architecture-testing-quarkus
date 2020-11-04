@@ -18,9 +18,9 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
-import dev.unexist.showcase.todo.domain.model.todo.Todo;
-import dev.unexist.showcase.todo.domain.model.todo.TodoBase;
-import dev.unexist.showcase.todo.domain.service.todo.TodoService;
+import dev.unexist.showcase.todo.domain.todo.model.Todo;
+import dev.unexist.showcase.todo.domain.todo.model.TodoBase;
+import dev.unexist.showcase.todo.domain.todo.service.TodoService;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
