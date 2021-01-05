@@ -1,4 +1,7 @@
-quarkus-jqassistant-showcase.iml
+syntax: glob
+
+**/*.iml
+
 target/
 .idea/
 .mvn/

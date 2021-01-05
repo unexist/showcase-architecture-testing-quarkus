@@ -9,9 +9,8 @@
  * See the file COPYING for details.
  **/
 
-package dev.unexist.showcase.todo.domain.todo.repository;
+package dev.unexist.showcase.todo.domain.todo;
 
-import dev.unexist.showcase.todo.domain.todo.model.Todo;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

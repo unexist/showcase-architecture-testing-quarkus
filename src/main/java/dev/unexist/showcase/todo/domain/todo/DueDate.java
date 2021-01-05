@@ -9,7 +9,7 @@
  * See the file COPYING for details.
  **/
 
-package dev.unexist.showcase.todo.domain.todo.model;
+package dev.unexist.showcase.todo.domain.todo;
 
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 

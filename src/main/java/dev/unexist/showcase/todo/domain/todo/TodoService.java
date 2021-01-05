@@ -9,11 +9,8 @@
  * See the file COPYING for details.
  **/
 
-package dev.unexist.showcase.todo.domain.todo.service;
+package dev.unexist.showcase.todo.domain.todo;
 
-import dev.unexist.showcase.todo.domain.todo.model.Todo;
-import dev.unexist.showcase.todo.domain.todo.model.TodoBase;
-import dev.unexist.showcase.todo.domain.todo.repository.TodoRepository;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 import javax.enterprise.context.ApplicationScoped;
