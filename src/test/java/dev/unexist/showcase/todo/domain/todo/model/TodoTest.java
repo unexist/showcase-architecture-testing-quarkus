@@ -1,5 +1,5 @@
 /**
- * @package Quarkus-jqAssistant-Showcase
+ * @package Quarkus-Arch-Testing-Showcase
  *
  * @file Contrived tests with PBT
  * @copyright 2020 Christoph Kappel <christoph@unexist.dev>
@@ -16,9 +16,6 @@ import net.jqwik.api.Property;
 import net.jqwik.api.PropertyDefaults;
 import net.jqwik.api.constraints.IntRange;
 import org.assertj.core.api.Condition;
-import dev.unexist.showcase.todo.domain.model.todo.DueDate;
-import dev.unexist.showcase.todo.domain.model.todo.Todo;
-import dev.unexist.showcase.todo.domain.model.todo.TodoBase;
 
 import java.time.Instant;
 import java.time.LocalDate;

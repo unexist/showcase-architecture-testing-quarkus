@@ -1,5 +1,5 @@
 /**
- * @package Quarkus-jqAssistant-Showcase
+ * @package Quarkus-Arch-Testing-Showcase
  *
  * @file Todo resource
  * @copyright 2020 Christoph Kappel <christoph@unexist.dev>

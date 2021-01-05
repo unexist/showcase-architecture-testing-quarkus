@@ -1,5 +1,5 @@
 /**
- * @package Quarkus-jqAssistant-Showcase
+ * @package Quarkus-Arch-Testing-Showcase
  *
  * @file Layer Tests
  * @copyright 2020 Christoph Kappel <christoph@unexist.dev>
@@ -45,7 +45,7 @@ public class LayerArchUnitTest {
             .whereLayer("Repository")
                 .mayOnlyBeAccessedByLayers("Service")
             .whereLayer("Infrastructure")
-                .mayOnlyBeAccessedByLayers("Service")
+                .mayOnlyBeAccessedByLayers("Application", "Service", "Repository")
             .check(classes);
     }
 }

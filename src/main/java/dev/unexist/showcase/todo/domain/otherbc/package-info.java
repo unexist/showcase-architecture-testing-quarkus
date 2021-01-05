@@ -1,5 +1,5 @@
 /**
- * @package Quarkus-jqAssistant-Showcase
+ * @package Quarkus-Arch-Testing-Showcase
  *
  * @file Package info for JavaDoc
  * @copyright 2020 Christoph Kappel <christoph@unexist.dev>
