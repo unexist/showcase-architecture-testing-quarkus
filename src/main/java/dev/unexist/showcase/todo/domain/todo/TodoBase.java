@@ -11,23 +11,22 @@
 
 package dev.unexist.showcase.todo.domain.todo;
 
+import javax.validation.constraints.NotBlank;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
-
-import javax.validation.constraints.NotNull;
 
 @DDD.Entity
 @DDD.Layer.DomainLayer
 public class TodoBase {
 
-    @NotNull
+    @NotBlank
     private String title;
 
-    @NotNull
+    @NotBlank
     private String description;
 
     private Boolean done;
 
-    @NotNull
+    @NotBlank
     private DueDate dueDate;
 
     public String getTitle() {
@@ -61,7 +60,7 @@ public class TodoBase {
     public void setDueDate(DueDate dueDate) {
         this.dueDate = dueDate;
 
-        if (null != dueDate.getStart() && null != dueDate.getDue()){
+        if (null != dueDate.getStart() && null != dueDate.getDue()) {
             this.done = dueDate.getStart().isBefore(dueDate.getDue());
         }
     }

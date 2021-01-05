@@ -254,7 +254,7 @@
             <!-- This rule has been changed. Numbers shouldn't be allowed like this: ^[a-z]+([A-Z][a-z]+)*$ -->
             <property
                     name="format"
-                    value="^[a-z]+([A-Z][a-z]+)*[0-9]*$"/>
+                    value="^[a-z][a-zA-Z0-9]*$"/>
         </module>
 
 
@@ -267,7 +267,7 @@
             <!-- This rule has been changed. Numbers shouldn't be allowed like this: ^[a-z]+([A-Z][a-z]+)*$ -->
             <property
                     name="format"
-                    value="^[a-z]+([A-Z][a-z]+)*([x]?[0-9]+)*$"/>
+                    value="^[a-z][a-zA-Z0-9]*$"/>
         </module>
         <module name="MethodLength">
             <property
@@ -323,7 +323,7 @@
         <module name="PackageName">
             <property
                     name="format"
-                    value="^[a-z]+(\.[a-z]+)+$"/>
+                    value="^[a-z]+(\.[a-z0-9]+)+$"/>
         </module>
         <module name="ParameterName">
             <property

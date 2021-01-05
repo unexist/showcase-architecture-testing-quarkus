@@ -68,7 +68,7 @@ public class TodoRepository {
             this.list.set(todo.getId(), todo);
 
             ret = true;
-        } catch(IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e) {
             LOGGER.warn("update: id={} not found", todo.getId());
         }
 
@@ -117,7 +117,7 @@ public class TodoRepository {
      *          A {@link Optional} with the result of the lookup
      **/
 
-    public Optional<Todo> findById(int id ) {
+    public Optional<Todo> findById(int id) {
         return this.list.stream()
                 .filter(t -> t.getId() == id)
                 .findFirst();
