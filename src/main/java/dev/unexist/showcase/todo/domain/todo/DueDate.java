@@ -11,13 +11,18 @@
 
 package dev.unexist.showcase.todo.domain.todo;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import dev.unexist.showcase.todo.infrastructure.serializer.DateSerializer;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 import java.time.LocalDate;
 
 @DDD.ValueObject
 public class DueDate {
+    @JsonSerialize(using = DateSerializer.class)
     private LocalDate start;
+
+    @JsonSerialize(using = DateSerializer.class)
     private LocalDate due;
 
     public LocalDate getStart() {
