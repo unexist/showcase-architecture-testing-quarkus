@@ -11,6 +11,8 @@
 
 package dev.unexist.showcase.todo.domain.todo;
 
+import org.jmolecules.architecture.layered.DomainLayer;
+import org.jmolecules.ddd.annotation.Repository;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +24,9 @@ import java.util.List;
 import java.util.Optional;
 
 @DDD.Repository
-@DDD.Layer.InfrastructureLayer
+@DDD.Layer.DomainLayer
+@Repository
+@DomainLayer
 @ApplicationScoped
 public class TodoRepository {
     private static final Logger LOGGER = LoggerFactory.getLogger(TodoRepository.class);

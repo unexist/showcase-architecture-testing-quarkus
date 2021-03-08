@@ -11,10 +11,14 @@
 
 package dev.unexist.showcase.todo.domain.todo;
 
+import org.jmolecules.architecture.layered.DomainLayer;
+import org.jmolecules.ddd.annotation.AggregateRoot;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 @DDD.AggregateRoot
 @DDD.Layer.DomainLayer
+@AggregateRoot
+@DomainLayer
 public class Todo extends TodoBase {
     private int id;
 

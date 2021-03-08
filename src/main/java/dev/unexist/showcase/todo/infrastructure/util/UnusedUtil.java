@@ -11,6 +11,11 @@
 
 package dev.unexist.showcase.todo.infrastructure.util;
 
+import org.jmolecules.architecture.layered.InfrastructureLayer;
+import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
+
+@DDD.Layer.InfrastructureLayer
+@InfrastructureLayer
 public class UnusedUtil {
 
     /**

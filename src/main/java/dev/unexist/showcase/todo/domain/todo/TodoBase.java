@@ -12,10 +12,15 @@
 package dev.unexist.showcase.todo.domain.todo;
 
 import javax.validation.constraints.NotBlank;
+
+import org.jmolecules.architecture.layered.DomainLayer;
+import org.jmolecules.ddd.annotation.Entity;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 @DDD.Entity
 @DDD.Layer.DomainLayer
+@Entity
+@DomainLayer
 public class TodoBase {
 
     @NotBlank

@@ -11,6 +11,7 @@
 
 package dev.unexist.showcase.todo.domain.todo;
 
+import org.jmolecules.architecture.layered.DomainLayer;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -20,6 +21,7 @@ import java.util.Optional;
 
 @DDD.Service
 @DDD.Layer.DomainLayer
+@DomainLayer
 @ApplicationScoped
 public class TodoService {
 

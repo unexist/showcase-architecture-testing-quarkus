@@ -12,7 +12,11 @@
 package dev.unexist.showcase.todo.infrastructure.util.cycle.slice1;
 
 import dev.unexist.showcase.todo.infrastructure.util.cycle.slice2.UnusedCycleB;
+import org.jmolecules.architecture.layered.InfrastructureLayer;
+import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
+@DDD.Layer.InfrastructureLayer
+@InfrastructureLayer
 public class UnusedCycleA {
     private UnusedCycleB unusedCycleB;
 
