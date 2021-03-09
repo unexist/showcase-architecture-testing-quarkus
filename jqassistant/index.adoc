@@ -1,0 +1,18 @@
+= Architecture tests and decisions
+:description: This repository contains a skeleton to start with asciidoc¬
+:doctype: book
+:toc: left
+:toc-title: Table of Contents
+:toclevels: 2
+:sectnums:
+:icons: font
+:nofooter:
+
+This document contains example https://jqassistant.org/[jqAssistant] rules
+along with simple https://adr.github.io/[Architecture Decision Records].
+
+include::decisions/group.adoc[]
+
+include::assorted/group.adoc[]
+
+include::complex/group.adoc[]

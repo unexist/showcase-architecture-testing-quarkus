@@ -1,3 +1,0 @@
-[[architecture:Default]]
-[role=group,includesConstraints="architecture:*(minor)",includesConcepts="architecture:*"]
-== Architektur Dokumentation

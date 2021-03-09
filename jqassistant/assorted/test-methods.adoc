@@ -1,8 +1,8 @@
 == Test
 
-[[ok:TestInMethodName]]
+[[assorted:TestMethods]]
 [source,cypher,role=constraint,severity=minor]
-.Alle Testmethoden müssen `test` als Präfix haben.
+.All test methods must start with the prefix `test`.
 ----
 MATCH (meth:Method:Java)
     -[:ANNOTATED_BY]->(annotation:Java:Annotation)

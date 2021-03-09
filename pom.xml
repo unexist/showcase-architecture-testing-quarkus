@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
          xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.subforge.showcase</groupId>
+    <groupId>dev.unexist.showcase</groupId>
     <artifactId>quarkus-arch-testing-showcase</artifactId>
     <version>0.1</version>
 
@@ -191,8 +191,9 @@
                             <failOnSeverity>CRITICAL</failOnSeverity>
                             <groups>
                                 <group>java-ddd:Default</group>
-                                <group>architecture:Default</group>
-                                <group>ok:Default</group>
+                                <group>adr:Default</group>
+                                <group>assorted:Default</group>
+                                <group>complex:Default</group>
                                 <group>cyclic:Default</group>
                             </groups>
                         </configuration>

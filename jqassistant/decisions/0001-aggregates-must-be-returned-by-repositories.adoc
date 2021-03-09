@@ -1,0 +1,42 @@
+= 1. Aggregates must be returned by repositories
+
+|===
+| Proposed Date: | 2021-03-09
+| Decision Date: | ?
+| Proposer:      | Christoph Kappel
+| Deciders:      | ?
+| Status:        | drafted
+| Issues:        | ?
+| References:    |
+| Priority:      | high
+|===
+
+NOTE: *Status types:* drafted | proposed | rejected | accepted | deprecated | superseded +
+      *Priority:* low | medium | high
+
+== Context
+
+In DDD, entities belong to an aggregate..
+
+== Decision
+
+Repositories must be used only to fetch aggregates from any kind of persistent
+store.
+
+== Consequences
+
+[[adr:AggregateRepository]]
+[source,cypher,role=constraint,requiresConcepts="java-ddd:Aggregate*,java-ddd:Repository*"]
+.Aggregates must be returned by repositories!
+----
+MATCH
+    (repo:DDD:Repository)-[:DECLARES]->(:Method)-[:RETURNS]->(t:Type)
+WHERE
+    NOT t:DDD:AggregateRoot
+        AND NOT t.fqn = "java.util.List"
+        AND NOT t.fqn = "java.util.Optional"
+        AND NOT t.fqn = "boolean"
+        AND NOT t.fqn = "void"
+RETURN
+    repo.fqn as Repository, t.fqn as IllegalReturnType
+----

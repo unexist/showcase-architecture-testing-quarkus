@@ -1,0 +1,41 @@
+= 3. Assertion library
+
+|===
+| Proposed Date: | 2021-03-09
+| Decision Date: | ?
+| Proposer:      | Christoph Kappel
+| Deciders:      | ?
+| Status:        | drafted
+| Issues:        | ?
+| References:    |
+| Priority:      | high
+|===
+
+NOTE: *Status types:* drafted | proposed | rejected | accepted | deprecated | superseded +
+      *Priority:* low | medium | high
+
+== Context
+
+There are dozen of assertion library available, we want to settle one for
+our purpose and rely just on this one.
+
+== Decision
+
+After some consideration we aggreed on using https://assertj.github.io/doc/[AssertJ].
+
+== Consequences
+
+[[adr:AssertionLibrary]]
+[source,cypher,role=constraint,severity=minor]
+.All calls to `assertThat` must be from `AssertJ`!
+----
+MATCH
+    (t:Type)-[:DECLARES]->(meth)
+WHERE
+    NOT t.fqn =~ 'org.assertj.core.api.*'
+        AND meth.signature =~ '.* assertThat.*'
+SET
+    meth:AssertJ:Assert
+RETURN
+    meth
+----

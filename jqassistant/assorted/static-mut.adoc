@@ -1,8 +1,8 @@
 === Static mutable
 
-[[ok:StaticMut]]
+[[assorted:StaticMut]]
 [source,cypher,role=constraint,severity=blocker]
-.Alle statischen Felder müssen ´final´ sein.
+.All static fields must be ´final´.
 ----
 MATCH (c:Class)-[:DECLARES]->(f:Field)<-[w:WRITES]-(m:Method)
 WHERE

@@ -1,0 +1,39 @@
+= 2. No deep linking between aggregates
+
+|===
+| Proposed Date: | 2021-03-09
+| Decision Date: | ?
+| Proposer:      | Christoph Kappel
+| Deciders:      | ?
+| Status:        | drafted
+| Issues:        | ?
+| References:    |
+| Priority:      | high
+|===
+
+NOTE: *Status types:* drafted | proposed | rejected | accepted | deprecated | superseded +
+      *Priority:* low | medium | high
+
+== Context
+
+Deep linking of aggregates can lead to nasty problems.
+
+== Decision
+
+Entities just belong to a single aggregate.
+
+== Consequences
+
+[[adr:NoDeepLinkingBetweenAggregates]]
+[source,cypher,role=constraint,requiresConcepts="java-ddd:*"]
+.Finds all entities that are referenced by more than one aggregate.
+----
+MATCH
+      shortestPath((a:DDD:AggregateRoot)-[:DEPENDS_ON*]->(e:DDD:Entity))
+WITH
+      e, collect(a.name) AS aggregates
+WHERE
+      size(aggregates) > 1
+RETURN
+      e.name AS Entity, aggregates AS Aggregates
+----

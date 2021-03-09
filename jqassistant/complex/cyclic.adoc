@@ -16,7 +16,6 @@ RETURN
     COUNT(c1) AS count
 ----
 
-
 [[cyclic:PackageDependency]]
 [source,cypher,role=concept,requiresConcept="cyclic:ClassDependency"]
 .Package Dependency

@@ -9,3 +9,7 @@ https://www.archunit.org/
 ## jqAssistant
 
 https://jqassistant.org/
+
+## Architecture Decision Records
+
+https://adr.github.io/
