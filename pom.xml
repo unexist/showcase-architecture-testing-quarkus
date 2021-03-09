@@ -10,28 +10,41 @@
     <properties>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <maven.compiler.parameters>true</maven.compiler.parameters>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>11</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus-plugin.version>1.12.1.Final</quarkus-plugin.version>
+
+        <apache-commons-lang.version>3.11</apache-commons-lang.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        <hg-revision-plugin.version>0.10</hg-revision-plugin.version>
+        <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
+        <jackson-modules-java8.version>2.12.1</jackson-modules-java8.version>
+        <jmolecules.version>1.1.0</jmolecules.version>
+
+        <!-- Testing -->
+        <jqassistant.version>1.9.1</jqassistant.version>
+        <jqassistant-ddd.version>1.8.1</jqassistant-ddd.version>
+        <jqwik.version>1.5.0</jqwik.version>
+        <archunit.version>0.17.0</archunit.version>
+
+        <!-- Quarkus -->
+        <quarkus-plugin.version>1.12.0.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>1.12.1.Final</quarkus.platform.version>
-        <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-        <version.microprofile-ext>1.0.5</version.microprofile-ext>
-        <version.apache_commons-lang>3.10</version.apache_commons-lang>
-        <version.slf4j>1.7.30</version.slf4j>
-        <jqassistant.version>1.9.1</jqassistant.version>
+        <quarkus.platform.version>1.12.0.Final</quarkus.platform.version>
+
+        <!-- Audit -->
         <checkstyle-plugin.version>3.1.1</checkstyle-plugin.version>
         <spotbugs-maven-plugin.version>4.1.3</spotbugs-maven-plugin.version>
         <spotbugs-plugin.version>4.1.4</spotbugs-plugin.version>
-        <jmolecules.version>1.1.0</jmolecules.version>
+
+        <!-- Workaround to get the timestamp -->
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- Quarkus -->
             <dependency>
                 <groupId>${quarkus.platform.group-id}</groupId>
                 <artifactId>${quarkus.platform.artifact-id}</artifactId>
@@ -41,14 +54,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2/</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <!-- Quarkus -->
         <dependency>
@@ -69,18 +74,6 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-smallrye-health</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-smallrye-metrics</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-smallrye-openapi</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
             <artifactId>quarkus-rest-client</artifactId>
         </dependency>
 
@@ -88,26 +81,26 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>${version.apache_commons-lang}</version>
+            <version>${apache-commons-lang.version}</version>
         </dependency>
 
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${version.slf4j}</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jdk14</artifactId>
-            <version>${version.slf4j}</version>
+            <version>${slf4j.version}</version>
         </dependency>
 
         <!-- jqAssistant -->
         <dependency>
             <groupId>org.jqassistant.contrib.plugin</groupId>
             <artifactId>jqassistant-java-ddd-annotations</artifactId>
-            <version>1.8.1</version>
+            <version>${jqassistant-ddd.version}</version>
         </dependency>
 
         <!-- Reporting -->
@@ -141,13 +134,13 @@
         <dependency>
             <groupId>net.jqwik</groupId>
             <artifactId>jqwik</artifactId>
-            <version>1.3.5</version>
+            <version>${jqwik.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.tngtech.archunit</groupId>
             <artifactId>archunit-junit5</artifactId>
-            <version>0.14.1</version>
+            <version>${archunit.version}</version>
         </dependency>
     </dependencies>
 
