@@ -4,10 +4,10 @@ scan:
 analyze:
 	mvn jqassistant:analyze
 
-run: scan analyze
-
-server: run
+server:
 	mvn jqassistant:server
+
+docs: scan analyze
 
 open:
 	open target/jqassistant/report/asciidoc/index.html

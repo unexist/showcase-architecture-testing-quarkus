@@ -12,12 +12,15 @@
 package dev.unexist.showcase.todo.infrastructure.util.cycle.slice1;
 
 import dev.unexist.showcase.todo.infrastructure.util.cycle.slice2.UnusedCycleB;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.jmolecules.architecture.layered.InfrastructureLayer;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 @DDD.Layer.InfrastructureLayer
 @InfrastructureLayer
 public class UnusedCycleA {
+    @SuppressFBWarnings("URF_UNREAD_FIELD")
+    @SuppressWarnings("unused")
     private UnusedCycleB unusedCycleB;
 
     public UnusedCycleA() {
