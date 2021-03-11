@@ -37,3 +37,5 @@ WHERE
 RETURN
       e.name AS Entity, aggregates AS Aggregates
 ----
+
+include::jQA:Rules[concepts="adr:NoDeepLinkingBetweenAggregates*", constraints="adr:NoDeepLinkingBetweenAggregates*"]

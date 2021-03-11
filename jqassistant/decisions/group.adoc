@@ -1,9 +1,0 @@
-[[adr:Default]]
-[role=group,includesConstraints="adr:*"]
-== List of Architecture Decision Records
-
-include::0001-aggregates-must-be-returned-by-repositories.adoc[]
-
-include::0002-no-deep-linking-between-aggregates.adoc[]
-
-include::0003-assertion-library.adoc[]

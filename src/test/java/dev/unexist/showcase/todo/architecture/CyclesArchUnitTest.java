@@ -9,26 +9,28 @@
  * See the file LICENSE for details.
  **/
 
-package dev.unexist.showcase.todo.domain.todo.model;
+package dev.unexist.showcase.todo.architecture;
 
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.junit.AnalyzeClasses;
-import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import static com.tngtech.archunit.library.dependencies.SlicesRuleDefinition.slices;
 
 @AnalyzeClasses(packages = "dev.unexist.showcase")
 public class CyclesArchUnitTest {
     private final JavaClasses classes = new ClassFileImporter().importPackages("dev.unexist");
 
     @Test
-    @Ignore
+    @Disabled
     public void testNoCyclesBetweenSlices() {
-        /*slices()
+        slices()
                 .matching("..(cycle).(*)..")
                     .namingSlices("$2 of $1")
                 .should()
                     .beFreeOfCycles()
-                .check(classes);*/
+                .check(classes);
     }
 }

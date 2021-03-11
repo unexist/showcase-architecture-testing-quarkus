@@ -11,6 +11,9 @@
 
 package dev.unexist.showcase.todo.domain.todo.model;
 
+import dev.unexist.showcase.todo.domain.todo.DueDate;
+import dev.unexist.showcase.todo.domain.todo.Todo;
+import dev.unexist.showcase.todo.domain.todo.TodoBase;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
 import net.jqwik.api.PropertyDefaults;
@@ -26,7 +29,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @PropertyDefaults(tries = 10)
 public class TodoTest {
-    private static final int FUTURE_TIME = 1609426800;
+    private static final int FUTURE_TIME = 1741598467;
 
     @Property
     public void testCreateTodo(@ForAll String anyStr) {
@@ -58,7 +61,7 @@ public class TodoTest {
         /* Arbitrary and contrived test */
         Condition<Todo> cond1 = new Condition<>(t ->
                 t.getDueDate().getStart().isBefore(t.getDueDate().getDue()),
-                "Start date is b efore due date");
+                "Start date is before due date");
         Condition<Todo> cond2 = new Condition<>(TodoBase::getDone,
                 "Todo must not be done");
 

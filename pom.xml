@@ -22,16 +22,19 @@
         <jmolecules.version>1.1.0</jmolecules.version>
 
         <!-- Testing -->
-        <jqassistant.version>1.9.1</jqassistant.version>
-        <jqassistant-ddd.version>1.8.1</jqassistant-ddd.version>
         <archunit.version>0.17.0</archunit.version>
         <jqwik.version>1.5.0</jqwik.version>
 
+        <!-- jqAssistant -->
+        <jqassistant.version>1.9.1</jqassistant.version>
+        <jqassistant-ddd.version>1.8.1</jqassistant-ddd.version>
+        <jqassistant-jmoluecules.version>1.0.1</jqassistant-jmoluecules.version>
+
         <!-- Quarkus -->
-        <quarkus-plugin.version>1.12.0.Final</quarkus-plugin.version>
+        <quarkus-plugin.version>1.12.1.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>1.12.0.Final</quarkus.platform.version>
+        <quarkus.platform.version>1.12.1.Final</quarkus.platform.version>
 
         <!-- Audit -->
         <checkstyle-plugin.version>3.1.1</checkstyle-plugin.version>
@@ -105,11 +108,6 @@
             <groupId>org.jqassistant.contrib.plugin</groupId>
             <artifactId>jqassistant-java-ddd-annotations</artifactId>
             <version>${jqassistant-ddd.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.buschmais.jqassistant.plugin</groupId>
-            <artifactId>asciidoc-report</artifactId>
-            <version>1.9.1</version>
         </dependency>
 
         <!-- Reporting -->
@@ -195,7 +193,7 @@
                 <version>${jqassistant.version}</version>
                 <executions>
                     <execution>
-                        <id>default-cli</id>
+                        <id>run-jqassistant</id>
                         <goals>
                             <goal>scan</goal>
                             <goal>analyze</goal>
@@ -204,11 +202,15 @@
                             <warnOnSeverity>MINOR</warnOnSeverity>
                             <failOnSeverity>CRITICAL</failOnSeverity>
                             <groups>
+                                <!-- DDD -->
                                 <group>java-ddd:Default</group>
-                                <group>adr:Default</group>
-                                <group>assorted:Default</group>
-                                <group>complex:Default</group>
-                                <group>cyclic:Default</group>
+
+                                <!-- jMolecules -->
+                                <group>jmolecules-layered:Default</group>
+<!--                                <group>jmolecules-onion-classical:Default</group>-->
+<!--                                <group>jmolecules-onion-simplified:Default</group>-->
+                                <group>jmolecules-ddd:Default</group>
+<!--                                <group>jmolecules-event:Default</group>-->
                             </groups>
                         </configuration>
                     </execution>
@@ -217,7 +219,17 @@
                     <dependency>
                         <groupId>org.jqassistant.contrib.plugin</groupId>
                         <artifactId>jqassistant-java-ddd-plugin</artifactId>
-                        <version>1.8.1</version>
+                        <version>${jqassistant-ddd.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jqassistant.contrib.plugin</groupId>
+                        <artifactId>jqassistant-jmolecules-plugin</artifactId>
+                        <version>${jqassistant-jmoluecules.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.buschmais.jqassistant.plugin</groupId>
+                        <artifactId>asciidoc-report</artifactId>
+                        <version>${jqassistant.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

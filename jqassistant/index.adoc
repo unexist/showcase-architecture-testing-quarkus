@@ -1,4 +1,3 @@
-= Architecture tests and decisions
 :description: This repository contains a skeleton to start with asciidoc¬
 :doctype: book
 :toc: left
@@ -7,12 +6,53 @@
 :sectnums:
 :icons: font
 :nofooter:
+= Architecture tests and decisions
+
+[[default]]
+[role=group,includesGroups="adr:Default,complex:Default,assorted:Default"]
+== jQAssistant rules
 
 This document contains example https://jqassistant.org/[jqAssistant] rules
 along with simple https://adr.github.io/[Architecture Decision Records].
 
-include::decisions/group.adoc[]
+[[adr:Default]]
+[role=group,includesGroupsConstraints="adr:*"]
+== List of Architecture Decision Records
 
-include::assorted/group.adoc[]
+include::decisions/0001-aggregates-must-be-returned-by-repositories.adoc[leveloffset=2]
 
-include::complex/group.adoc[]
+include::decisions/0002-no-deep-linking-between-aggregates.adoc[leveloffset=2]
+
+include::decisions/0003-assertion-library.adoc[leveloffset=2]
+
+[[complex:Default]]
+[role=group,includesConstraints="complex:*(critical)"]
+== Complex rules
+
+This is a group of complex constraints and concepts.
+
+include::complex/cyclic.adoc[]
+
+[[assorted:Default]]
+[role=group,includesConstraints="assorted:*(critical)"]
+== Assorted rules
+
+This is a group of assorted constraints and concepts.
+
+include::assorted/static-mut.adoc[]
+
+include::assorted/test-methods.adoc[]
+
+include::assorted/whitebox.adoc[]
+
+[[metrics:Default]]
+[role=group,includesConstraints="metrics:*"]
+== Metrics
+
+This is a group of metrics.
+
+include::metrics/metrics.adoc[]
+
+== Summary
+
+include::jQA:Summary[]

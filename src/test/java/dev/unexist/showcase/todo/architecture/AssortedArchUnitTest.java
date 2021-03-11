@@ -9,7 +9,7 @@
  * See the file LICENSE for details.
  **/
 
-package dev.unexist.showcase.todo.domain.todo.model;
+package dev.unexist.showcase.todo.architecture;
 
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
@@ -22,7 +22,7 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.fields;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
 
 @AnalyzeClasses(packages = "dev.unexist.showcase")
-public class TodoArchUnitTest {
+public class AssortedArchUnitTest {
 
     @ArchTest
     static final ArchRule testShouldBePrefixedWithTest =

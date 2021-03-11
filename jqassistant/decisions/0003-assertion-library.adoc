@@ -39,3 +39,5 @@ SET
 RETURN
     meth
 ----
+
+include::jQA:Rules[concepts="adr:AssertionLibrary*", constraints="adr:AssertionLibrary*"]

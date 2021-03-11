@@ -1,7 +1,0 @@
-[[complex:Default]]
-[role=group,includesConstraints="complex:*(critical)"]
-=== complex rules
-
-This is a group of complex constraints and concepts.
-
-include::cyclic.adoc[]

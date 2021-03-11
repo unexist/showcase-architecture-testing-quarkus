@@ -12,3 +12,5 @@ WHERE NOT
 RETURN
     meth AS InvalidTestMethod
 ----
+
+include::jQA:Rules[concepts="assorted:TestMethods*",constraints="assorted:TestMethod*"]
