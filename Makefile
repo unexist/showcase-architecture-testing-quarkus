@@ -1,3 +1,6 @@
+build:
+	mvn compile test-compile
+
 scan:
 	mvn jqassistant:scan
 
@@ -7,9 +10,9 @@ analyze:
 server:
 	mvn jqassistant:server
 
-adoc: scan analyze
+adoc: build scan analyze
 
-report: scan analyze
+report: build scan analyze
 	mvn jqassistant:report
 
 open-adoc:

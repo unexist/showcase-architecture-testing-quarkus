@@ -1,8 +1,8 @@
-[[cyclic:Default]]
-[role=group,includesConstraints="cyclic:*(minor)",includesConcepts="cyclic:*"]
+[[complex:Default]]
+[role=group,includesConstraints="complex:*(minor)",includesConcepts="complex:*"]
 == Java
 
-[[cyclic:ClassDependency]]
+[[complex:ClassDependency]]
 [source,cypher,role=concept"]
 .Class Dependency
 ----
@@ -16,8 +16,8 @@ RETURN
     COUNT(c1) AS count
 ----
 
-[[cyclic:PackageDependency]]
-[source,cypher,role=concept,requiresConcept="cyclic:ClassDependency"]
+[[complex:PackageDependency]]
+[source,cypher,role=concept,requiresConcept="complex:ClassDependency"]
 .Package Dependency
 ----
 MATCH
@@ -30,9 +30,9 @@ RETURN
     COUNT(p1) AS count
 ----
 
-[[cyclic:CyclicPackageDependency]]
-[source,cypher,role=constraint,requiresConcept="cyclic:PackageDependency"]
-.There must be no cyclic package dependencies.
+[[complex:CyclicPackageDependency]]
+[source,cypher,role=constraint,requiresConcept="complex:PackageDependency"]
+.There must be no complex package dependencies.
 ----
 MATCH
     (p1:PACKAGE)-[:DEPENDS_ON]->(p2:PACKAGE),
@@ -45,9 +45,9 @@ ORDER BY
     package
 ----
 
-[[cyclic:CyclicClassDependency]]
-[source,cypher,role=constraint,requiresConcept="cyclic:ClassDependency"]
-.There must be no cyclic class dependencies.
+[[complex:CyclicClassDependency]]
+[source,cypher,role=constraint,requiresConcept="complex:ClassDependency"]
+.There must be no complex class dependencies.
 ----
 MATCH
     (p1:PACKAGE)-[:DEPENDS_ON]->(p2:PACKAGE),

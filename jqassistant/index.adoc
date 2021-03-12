@@ -45,7 +45,7 @@ include::assorted/test-methods.adoc[]
 include::assorted/whitebox.adoc[]
 
 [[metrics:default]]
-[role=group,includesConcepts="metrics:*",includesConstraints="metrics:*"]
+[role=group,includesConcepts="metrics:*"]
 == Metrics
 
 This is a group of metrics.

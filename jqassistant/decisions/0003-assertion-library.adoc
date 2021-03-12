@@ -30,14 +30,20 @@ After some consideration we aggreed on using https://assertj.github.io/doc/[Asse
 .All calls to `assertThat` must be from `AssertJ`!
 ----
 MATCH
-    (t:Type)-[:DECLARES]->(meth)
+      (assertType:Type)-[:DECLARES]->(assertMethod)
 WHERE
-    NOT t.fqn =~ 'org.assertj.core.api.*'
-        AND meth.signature =~ '.*assertThat.*'
-SET
-    meth:AssertJ:Assert
+      NOT assertType.fqn =~ 'org.assertj.core.api.*'
+            AND assertMethod.signature =~ '.*assertThat.*'
+WITH
+      assertMethod
+MATCH
+      (testType:Type)-[:DECLARES]->(testMethod:Method),
+      (testMethod)-[invocation:INVOKES]->(assertMethod)
 RETURN
-    meth
+      testType.fqn + "#" + testMethod.name as TestMethod,
+      invocation.lineNumber as LineNumber
+ORDER BY
+      TestMethod, LineNumber
 ----
 
 include::jQA:Rules[concepts="adr:AssertionLibrary*", constraints="adr:AssertionLibrary*"]
