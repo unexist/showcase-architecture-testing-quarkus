@@ -6,17 +6,16 @@
 :sectnums:
 :icons: font
 :nofooter:
-= Architecture tests and decisions
 
 [[default]]
-[role=group,includesGroups="adr:Default,complex:Default,assorted:Default"]
-== jQAssistant rules
+[role=group,includesGroups="adr:default,complex:default,assorted:default,metrics:default"]
+== Architecture decisions, tests and metrics
 
 This document contains example https://jqassistant.org/[jqAssistant] rules
 along with simple https://adr.github.io/[Architecture Decision Records].
 
-[[adr:Default]]
-[role=group,includesGroupsConstraints="adr:*"]
+[[adr:default]]
+[role=group,includesConcepts="adr:*",includesConstraints="adr:*"]
 == List of Architecture Decision Records
 
 include::decisions/0001-aggregates-must-be-returned-by-repositories.adoc[leveloffset=2]
@@ -25,16 +24,16 @@ include::decisions/0002-no-deep-linking-between-aggregates.adoc[leveloffset=2]
 
 include::decisions/0003-assertion-library.adoc[leveloffset=2]
 
-[[complex:Default]]
-[role=group,includesConstraints="complex:*(critical)"]
+[[complex:default]]
+[role=group,includesConcepts="complex:*",includesConstraints="complex:*"]
 == Complex rules
 
 This is a group of complex constraints and concepts.
 
 include::complex/cyclic.adoc[]
 
-[[assorted:Default]]
-[role=group,includesConstraints="assorted:*(critical)"]
+[[assorted:default]]
+[role=group,includesConcepts="metrics:*",includesConstraints="assorted:*"]
 == Assorted rules
 
 This is a group of assorted constraints and concepts.
@@ -45,8 +44,8 @@ include::assorted/test-methods.adoc[]
 
 include::assorted/whitebox.adoc[]
 
-[[metrics:Default]]
-[role=group,includesConstraints="metrics:*"]
+[[metrics:default]]
+[role=group,includesConcepts="metrics:*",includesConstraints="metrics:*"]
 == Metrics
 
 This is a group of metrics.

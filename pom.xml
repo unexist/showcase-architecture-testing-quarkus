@@ -24,6 +24,7 @@
         <!-- Testing -->
         <archunit.version>0.17.0</archunit.version>
         <jqwik.version>1.5.0</jqwik.version>
+        <hamcrest.version>2.2</hamcrest.version>
 
         <!-- jqAssistant -->
         <jqassistant.version>1.9.1</jqassistant.version>
@@ -153,6 +154,11 @@
             <groupId>com.tngtech.archunit</groupId>
             <artifactId>archunit-junit5</artifactId>
             <version>${archunit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
         </dependency>
     </dependencies>
 

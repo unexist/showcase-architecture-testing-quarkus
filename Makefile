@@ -7,7 +7,7 @@ analyze:
 server:
 	mvn jqassistant:server
 
-adocs: scan analyze
+adoc: scan analyze
 
 report: scan analyze
 	mvn jqassistant:report

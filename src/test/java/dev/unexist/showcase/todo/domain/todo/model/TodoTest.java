@@ -26,6 +26,8 @@ import java.time.ZoneId;
 
 import static org.assertj.core.api.Assertions.allOf;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.CoreMatchers.is;
 
 @PropertyDefaults(tries = 10)
 public class TodoTest {
@@ -40,11 +42,15 @@ public class TodoTest {
 
         assertThat(todo.getTitle()).isNotNull();
         assertThat(todo.getDescription()).isNotNull();
+
+        org.hamcrest.MatcherAssert.assertThat(todo.getDescription(),
+                is(notNullValue()));
     }
 
     @Property
     public void testCreateTodoWithDate(@ForAll String anyStr,
-                                       @ForAll @IntRange(min = TodoTest.FUTURE_TIME) int unixtime) {
+                                       @ForAll @IntRange(min = TodoTest.FUTURE_TIME) int unixtime)
+    {
         Todo todo = new Todo();
 
         todo.setTitle(anyStr);

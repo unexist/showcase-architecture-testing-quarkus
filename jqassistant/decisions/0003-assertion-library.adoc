@@ -33,7 +33,7 @@ MATCH
     (t:Type)-[:DECLARES]->(meth)
 WHERE
     NOT t.fqn =~ 'org.assertj.core.api.*'
-        AND meth.signature =~ '.* assertThat.*'
+        AND meth.signature =~ '.*assertThat.*'
 SET
     meth:AssertJ:Assert
 RETURN
