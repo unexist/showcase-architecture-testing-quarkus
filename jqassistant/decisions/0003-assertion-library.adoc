@@ -32,8 +32,8 @@ After some consideration we aggreed on using https://assertj.github.io/doc/[Asse
 MATCH
       (assertType:Type)-[:DECLARES]->(assertMethod)
 WHERE
-      NOT assertType.fqn =~ 'org.assertj.core.api.*'
-            AND assertMethod.signature =~ '.*assertThat.*'
+      NOT assertType.fqn =~ "org.assertj.core.api.*"
+            AND assertMethod.signature =~ ".*assertThat.*"
 WITH
       assertMethod
 MATCH
