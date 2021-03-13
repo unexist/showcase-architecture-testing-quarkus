@@ -1,0 +1,125 @@
+= 4. Layered Architecture
+
+|===
+| Proposed Date: | 2021-03-12
+| Decision Date: | ?
+| Proposer:      | Christoph Kappel
+| Deciders:      | ?
+| Status:        | drafted
+| Issues:        | ?
+| References:    |
+| Priority:      | high
+|===
+
+NOTE: *Status types:* drafted | proposed | rejected | accepted | deprecated | superseded +
+      *Priority:* low | medium | high
+
+== Context
+
+A common architecture helps new developers to find into the codebase.
+
+== Decision
+
+We made the decision to use the layered architecture here and enforce strict rules.
+
+== Consequences
+
+[[adr:LALayer]]
+.Every package contained in the root package is a Layer.
+[source,cypher,role=concept]
+----
+MATCH
+      (root:Package)-[:CONTAINS]->(layer:Package)
+WHERE
+      root.fqn = "dev.unexist.showcase.todo"
+SET
+      layer:Layer
+RETURN
+      layer AS Layer
+----
+
+[[adr:LALayerDependencyDefinition]]
+[plantuml,layerdeps,role=concept,requiresConcepts="adr:LALayer"]
+.The dependencies between layers are representend by `DEFINES_DEPENDENCY` relations.
+----
+[{name:"application"}]     as application     <<Layer>>
+[{name:"domain"}]          as domain          <<Layer>>
+[{name:"infrastructure"}]  as infrastructure  <<Layer>>
+
+application -down-> domain          : (+):DEFINES_DEPENDENCY
+application -down-> infrastructure  : (+):DEFINES_DEPENDENCY
+domain      -down-> infrastructure  : (+):DEFINES_DEPENDENCY
+----
+
+[[adr::LADependencyViolation]]
+[source,cypher,role=constraint,requiresConcepts="adr:LALayerDependency,adr:LALayerDependencyDefinition"]
+.There must be no dependencies between layers, that are not explicitly defined.
+----
+MATCH
+      (layer1:Layer)-[:DEPENDS_ON]->(layer2:Layer)
+WHERE NOT
+      (layer1)-[:DEFINES_DEPENDENCY]->(layer2)
+WITH
+      layer1, layer2
+MATCH
+      (layer1)-[:CONTAINS*]->(type1:Type),
+      (layer2)-[:CONTAINS*]->(type2:Type),
+      (type1)-[:DEPENDS_ON]->(type2)
+RETURN
+      layer1.name as Layer, type1 as Type, layer2.name as LayerDependency,
+            type2 as TypeDependency
+----
+
+[[adr:LALayerDependency]]
+[source,cypher,role=concept,requiresConcepts="adr:LALayer"]
+.A dependency between two layeres exists, if there are dependencies between them.
+----
+MATCH
+      (layer1:Layer:Package)-[:CONTAINS*]->(type1:Type),
+      (layer2:Layer:Package)-[:CONTAINS*]->(type2:Type),
+      (type1)-[deps:DEPENDS_ON]->(type2)
+WHERE
+      layer1 <> layer2
+WITH
+      layer1, layer2, count(deps) as weight
+MERGE
+      (layer1)-[d:DEPENDS_ON]->(layer2)
+SET
+      d.weight = weight
+RETURN
+      layer1 as Dependent, layer2 as Dependency, weight as Weight
+----
+
+[[adr:LALayerDependencyAsCSV]]
+[source,cypher,role=concept,requiresConcepts="adr:LALayer",reportType="csv"]
+.A dependency between two layeres exists, if there are dependencies between them.
+----
+MATCH
+      (layer1:Layer:Package)-[:CONTAINS*]->(type1:Type),
+      (layer2:Layer:Package)-[:CONTAINS*]->(type2:Type),
+      (type1)-[deps:DEPENDS_ON]->(type2)
+WHERE
+      layer1 <> layer2
+WITH
+      layer1, layer2, count(deps) as weight
+MERGE
+      (layer1)-[d:DEPENDS_ON]->(layer2)
+SET
+      d.weight = weight
+RETURN
+      layer1 as Dependent, layer2 as Dependency, weight as Weight
+----
+
+[[adr:LALayerDependencyDiagram]]
+[source,cypher,role=concept,requiresConcepts="adr:LALayerDependency",reportType="plantuml-component-diagram"]
+.Diagram about existing dependencies between layers.
+----
+MATCH
+      (layer:Layer)
+OPTIONAL MATCH
+      (layer)-[dependsOn:DEPENDS_ON]->(:Layer)
+RETURN
+      *
+----
+
+include::jQA:Rules[concepts="adr:LA*", constraints="adr:LA*"]

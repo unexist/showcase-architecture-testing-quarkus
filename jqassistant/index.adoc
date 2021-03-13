@@ -24,6 +24,8 @@ include::decisions/0002-no-deep-linking-between-aggregates.adoc[leveloffset=2]
 
 include::decisions/0003-assertion-library.adoc[leveloffset=2]
 
+include::decisions/0004-layered-architecture.adoc[leveloffset=2]
+
 [[complex:default]]
 [role=group,includesConcepts="complex:*",includesConstraints="complex:*"]
 == Complex rules

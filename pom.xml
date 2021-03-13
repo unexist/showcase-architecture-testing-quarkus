@@ -30,6 +30,7 @@
         <jqassistant.version>1.9.1</jqassistant.version>
         <jqassistant-ddd.version>1.8.1</jqassistant-ddd.version>
         <jqassistant-jmoluecules.version>1.0.1</jqassistant-jmoluecules.version>
+        <jqassistant-plantuml.version>1.9.0</jqassistant-plantuml.version>
 
         <!-- Quarkus -->
         <quarkus-plugin.version>1.12.1.Final</quarkus-plugin.version>
@@ -45,6 +46,7 @@
         <!-- Workaround to get the timestamp -->
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+        <jqassistant-jaxrs.version>1.1.4</jqassistant-jaxrs.version>
     </properties>
 
     <dependencyManagement>
@@ -236,6 +238,11 @@
                         <groupId>com.buschmais.jqassistant.plugin</groupId>
                         <artifactId>asciidoc-report</artifactId>
                         <version>${jqassistant.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jqassistant.contrib.plugin</groupId>
+                        <artifactId>jqassistant-plantuml-rule-plugin</artifactId>
+                        <version>${jqassistant-plantuml.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
