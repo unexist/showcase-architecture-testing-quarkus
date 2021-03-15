@@ -21,7 +21,7 @@ our purpose and rely just on this one.
 
 == Decision
 
-After some consideration we aggreed on using https://assertj.github.io/doc/[AssertJ].
+After some consideration we agreed on using https://assertj.github.io/doc/[AssertJ].
 
 == Consequences
 
