@@ -1,4 +1,4 @@
-:description: This repository contains a skeleton to start with asciidoc¬
+:description: This is a demo project for the combination of ADR and jqAssistant.
 :doctype: book
 :toc: left
 :toc-title: Table of Contents
