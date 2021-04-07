@@ -9,21 +9,21 @@
  * See the file LICENSE for details.
  **/
 
-package dev.unexist.showcase.todo.infrastructure.util.cycle.slice1;
+package dev.unexist.showcase.todo.infrastructure.util.cycle.sliceb;
 
-import dev.unexist.showcase.todo.infrastructure.util.cycle.slice2.UnusedCycleB;
+import dev.unexist.showcase.todo.infrastructure.util.cycle.slicea.UnusedCycleA;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.jmolecules.architecture.layered.InfrastructureLayer;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 @DDD.Layer.InfrastructureLayer
 @InfrastructureLayer
-public class UnusedCycleA {
+public class UnusedCycleB {
     @SuppressFBWarnings("URF_UNREAD_FIELD")
     @SuppressWarnings("unused")
-    private UnusedCycleB unusedCycleB;
+    private UnusedCycleA unusedCycle;
 
-    public UnusedCycleA() {
-        this.unusedCycleB = new UnusedCycleB();
+    public UnusedCycleB() {
+        this.unusedCycle = new UnusedCycleA();
     }
 }

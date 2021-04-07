@@ -11,6 +11,9 @@
 
 package dev.unexist.showcase.todo.application;
 
+import dev.unexist.showcase.todo.domain.todo.Todo;
+import dev.unexist.showcase.todo.domain.todo.TodoBase;
+import dev.unexist.showcase.todo.domain.todo.TodoService;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -19,9 +22,6 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
-import dev.unexist.showcase.todo.domain.todo.Todo;
-import dev.unexist.showcase.todo.domain.todo.TodoBase;
-import dev.unexist.showcase.todo.domain.todo.TodoService;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;

@@ -11,11 +11,13 @@
 
 package dev.unexist.showcase.todo.infrastructure.util;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.jmolecules.architecture.layered.InfrastructureLayer;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 @DDD.Layer.InfrastructureLayer
 @InfrastructureLayer
+@SuppressFBWarnings("UC_USELESS_VOID_METHOD")
 public class UnusedUtil {
 
     /**

@@ -11,11 +11,11 @@
 
 package dev.unexist.showcase.todo.domain.todo;
 
-import javax.validation.constraints.NotBlank;
-
 import org.jmolecules.architecture.layered.DomainLayer;
 import org.jmolecules.ddd.annotation.Entity;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
+
+import javax.validation.constraints.NotBlank;
 
 @DDD.Entity
 @DDD.Layer.DomainLayer
