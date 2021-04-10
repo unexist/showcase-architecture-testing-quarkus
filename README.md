@@ -1,4 +1,4 @@
-Architecture Testing Showcase
+Quarkus Architecture Testing Showcase
 ----
 This project holds examples for different types of architecture testing.
 
