@@ -16,6 +16,7 @@ import org.jmolecules.ddd.annotation.Entity;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @DDD.Entity
 @DDD.Layer.DomainLayer
@@ -31,7 +32,7 @@ public class TodoBase {
 
     private Boolean done;
 
-    @NotBlank
+    @NotNull
     private DueDate dueDate;
 
     /**
