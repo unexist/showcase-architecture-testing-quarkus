@@ -1,19 +1,19 @@
-Quarkus Architecture Testing Showcase
-----
+= Showcase for architecture testing based on quarkus
+
 This project holds examples for different types of architecture testing.
 
-Frameworks
-----
-- [ArchUnit](https://www.archunit.org)
-- [jqAssistant](https://jqassistant.org)
+== Frameworks
 
-Architecture Decision Records
-----
+- https://www.archunit.org[ArchUnit]
+- https://jqassistant.org[jqAssistant]
+
+== Architecture Decision Records
+
 Since jqAssistant can render asciidoc, it is also possible to include real
 tests and other queries inside of valid [ADR](https://adr.github.io/).
 
-Instructions
-----
+== Instructions
+
 Following make targets exist:
 
 - **build** - Build project and tests
