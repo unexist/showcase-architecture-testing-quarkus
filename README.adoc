@@ -9,8 +9,9 @@ This project holds examples for different types of architecture testing.
 
 == Architecture Decision Records
 
-Since jqAssistant can render asciidoc, it is also possible to include real
-tests and other queries inside of valid [ADR](https://adr.github.io/).
+Since https://jqassistant.org[jqAssistant]
+can render https://asciidoctor.org/[AsciiDoc], it is also possible to include real
+tests and other queries inside of valid https://adr.github.io/[ADR].
 
 == Instructions
 
