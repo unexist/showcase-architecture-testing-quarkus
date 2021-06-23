@@ -9,7 +9,7 @@
  * See the file LICENSE for details.
  **/
 
-package dev.unexist.showcase.todo.application;
+package dev.unexist.showcase.todo.adapter;
 
 import dev.unexist.showcase.todo.domain.todo.Todo;
 import dev.unexist.showcase.todo.domain.todo.TodoBase;
@@ -33,8 +33,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,11 +58,13 @@ public class TodoResource {
             @APIResponse(responseCode = "406", description = "Bad data"),
             @APIResponse(responseCode = "500", description = "Server error")
     })
-    public Response create(TodoBase base) {
+    public Response create(TodoBase base, @Context UriInfo uriInfo) {
         Response.ResponseBuilder response;
 
         if (this.todoService.create(base)) {
-            response = Response.status(Response.Status.CREATED);
+            URI uri = uriInfo.getAbsolutePathBuilder().build();
+
+            response = Response.created(uri);
         } else {
             response = Response.status(Response.Status.NOT_ACCEPTABLE);
         }
@@ -141,7 +146,7 @@ public class TodoResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Delete todo by id")
-    public Response delete(@PathParam("id") int id, TodoBase base) {
+    public Response delete(@PathParam("id") int id) {
         Response.ResponseBuilder response;
 
         if (this.todoService.delete(id)) {
