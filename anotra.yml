@@ -1,0 +1,4 @@
+name: showcase-architecture-testing-quarkus
+title: Showcase for architecture testing based on quarkus
+version: 0.1.0
+start_page: README.adoc
