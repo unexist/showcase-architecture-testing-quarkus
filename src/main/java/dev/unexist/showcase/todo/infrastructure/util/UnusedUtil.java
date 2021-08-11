@@ -23,8 +23,7 @@ public class UnusedUtil {
     /**
      * Util to do something nasty
      *
-     * @param stopAfter
-     *          Stop after n-th loops
+     * @param  stopAfter  Stop after n-th loops
      **/
 
     public static void recursive(int stopAfter) {

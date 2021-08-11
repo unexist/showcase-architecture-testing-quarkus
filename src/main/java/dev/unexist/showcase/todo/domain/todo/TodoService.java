@@ -31,9 +31,9 @@ public class TodoService {
     /**
      * Create new {@link Todo} entry and store it in repository
      *
-     * @param base
-     *          A {@link TodoBase} entry
-     * @return
+     * @param  base  A {@link TodoBase} entry
+     *
+     * @return Either {@code true} on success; otherwise {@code false}
      **/
 
     public boolean create(TodoBase base) {
@@ -45,12 +45,10 @@ public class TodoService {
     /**
      * Update {@link Todo} at with given id
      *
-     * @param id
-     *          Id to update
-     * @param base
-     *          Values for the entry
-     * @return
-     *          Either {@code true} on success; otherwise {@code false}
+     * @param  id    Id to update
+     * @param  base  Values for the entry
+     *
+     * @return Either {@code true} on success; otherwise {@code false}
      **/
 
     public boolean update(int id, TodoBase base) {
@@ -69,10 +67,9 @@ public class TodoService {
     /**
      * Delete {@link Todo} with given id
      *
-     * @param id
-     *          Id to delete
-     * @return
-     *          Either {@code true} on success; otherwise {@code false}
+     * @param  id  Id to delete
+     *
+     * @return Either {@code true} on success; otherwise {@code false}
      **/
 
     public boolean delete(int id) {
@@ -82,8 +79,7 @@ public class TodoService {
     /**
      * Get all {@link Todo} entries
      *
-     * @return
-     *          List of all {@link Todo}; might be empty
+     * @return List of all {@link Todo}; might be empty
      **/
 
     public List<Todo> getAll() {
@@ -93,10 +89,9 @@ public class TodoService {
     /**
      * Find {@link Todo} by given id
      *
-     * @param id
-     *          Id to look for
-     * @return
-     *          A {@link Optional} of the entry
+     * @param  id  Id to look for
+     *
+     * @return A {@link Optional} of the entry
      **/
 
     public Optional<Todo> findById(int id) {

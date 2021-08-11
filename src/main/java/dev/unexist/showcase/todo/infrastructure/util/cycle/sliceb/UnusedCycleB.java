@@ -23,6 +23,10 @@ public class UnusedCycleB {
     @SuppressWarnings("unused")
     private UnusedCycleA unusedCycle;
 
+    /**
+     * Constructor
+     **/
+
     public UnusedCycleB() {
         this.unusedCycle = new UnusedCycleA();
     }

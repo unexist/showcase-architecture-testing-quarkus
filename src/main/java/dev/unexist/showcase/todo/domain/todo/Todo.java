@@ -29,12 +29,11 @@ public class Todo extends TodoBase {
     public Todo() {
     }
 
-
     /**
      * Constructor
      *
      * @param base
-     *          Base entry
+     *         Base entry
      **/
 
     public Todo(final TodoBase base) {
@@ -45,7 +44,7 @@ public class Todo extends TodoBase {
      * Update values from base
      *
      * @param base
-     *          Todo base class
+     *         Todo base class
      **/
 
     public void update(final TodoBase base) {
@@ -58,8 +57,7 @@ public class Todo extends TodoBase {
     /**
      * Get id of entry
      *
-     * @return
-     *          Id of the entry
+     * @return Id of the entry
      **/
 
     public int getId() {
@@ -70,10 +68,11 @@ public class Todo extends TodoBase {
      * Set id of entry
      *
      * @param id
-     *          Id of the entry
+     *         Id of the entry
      **/
 
     public void setId(int id) {
         this.id = id;
+
     }
 }

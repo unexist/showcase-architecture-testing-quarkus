@@ -17,6 +17,7 @@ import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @DDD.Entity
 @DDD.Layer.DomainLayer
@@ -38,8 +39,7 @@ public class TodoBase {
     /**
      * Get title of the entry
      *
-     * @return
-     *      Title of the entry
+     * @return Title of the entry
      **/
 
     public String getTitle() {
@@ -49,8 +49,7 @@ public class TodoBase {
     /**
      * Set title of the entry
      *
-     * @param title
-     *          Title of the entry
+     * @param  title  Title of the entry
      **/
 
     public void setTitle(String title) {
@@ -60,8 +59,7 @@ public class TodoBase {
     /**
      * Get description of entry
      *
-     * @return
-     *      Description of the entry
+     * @return Description of the entry
      **/
 
     public String getDescription() {
@@ -82,8 +80,7 @@ public class TodoBase {
     /**
      * Get done state of entry
      *
-     * @return
-     *      Done state of the entry
+     * @return Done state of the entry
      **/
 
     public Boolean getDone() {
@@ -93,8 +90,7 @@ public class TodoBase {
     /**
      * Set done state of entry
      *
-     * @param done
-     *          Done state of the entry
+     * @param  done  Done state of the entry
      **/
 
     public void setDone(Boolean done) {
@@ -104,8 +100,7 @@ public class TodoBase {
     /**
      * Get due state of the entry
      *
-     * @return
-     *          Due state of the entry
+     * @return Due state of the entry
      **/
 
     public DueDate getDueDate() {
@@ -115,11 +110,12 @@ public class TodoBase {
     /**
      * Set due date of the entry
      *
-     * @param dueDate
-     *          Due date of the entry
+     * @param  dueDate  Due date of the entry
      **/
 
     public void setDueDate(DueDate dueDate) {
+        Objects.requireNonNull(dueDate, "DueDate cannot be null");
+
         this.dueDate = dueDate;
 
         if (null != dueDate.getStart() && null != dueDate.getDue()) {
