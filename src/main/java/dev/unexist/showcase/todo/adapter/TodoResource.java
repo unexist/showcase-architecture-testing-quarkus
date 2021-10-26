@@ -20,6 +20,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
@@ -53,6 +54,7 @@ public class TodoResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Create new todo")
+    @Tag(name = "Todo")
     @APIResponses({
             @APIResponse(responseCode = "201", description = "Todo created"),
             @APIResponse(responseCode = "406", description = "Bad data"),
@@ -61,8 +63,12 @@ public class TodoResource {
     public Response create(TodoBase base, @Context UriInfo uriInfo) {
         Response.ResponseBuilder response;
 
-        if (this.todoService.create(base)) {
-            URI uri = uriInfo.getAbsolutePathBuilder().build();
+        int newId = this.todoService.create(base);
+
+        if (-1 != newId) {
+            URI uri = uriInfo.getAbsolutePathBuilder()
+                    .path(Integer.toString(newId))
+                    .build();
 
             response = Response.created(uri);
         } else {
