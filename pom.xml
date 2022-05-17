@@ -16,25 +16,27 @@
         <!-- jMolecules -->
         <jmolecules.version>1.4.0</jmolecules.version>
 
-        <!-- ArchUnit -->
-        <archunit.version>0.23.1</archunit.version>
-
         <!-- jqAssistant -->
         <jqassistant.version>1.9.1</jqassistant.version>
         <jqassistant-ddd.version>1.8.1</jqassistant-ddd.version>
         <jqassistant-jmoluecules.version>1.0.1</jqassistant-jmoluecules.version>
         <jqassistant-plantuml.version>1.9.0</jqassistant-plantuml.version>
         <jqassistant-jaxrs.version>1.1.4</jqassistant-jaxrs.version>
+
+        <!-- ArchUnit -->
+        <archunit.version>0.23.1</archunit.version>
+
+        <!-- jDepend -->
+        <jdepend.version>2.9.1</jdepend.version>
+        <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
     </properties>
 
     <dependencies>
-
-
-        <!-- jqAssistant -->
+        <!-- Spotbugs -->
         <dependency>
-            <groupId>org.jqassistant.contrib.plugin</groupId>
-            <artifactId>jqassistant-java-ddd-annotations</artifactId>
-            <version>${jqassistant-ddd.version}</version>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+            <version>${spotbugs-plugin.version}</version>
         </dependency>
 
         <!-- jMolecules -->
@@ -49,18 +51,31 @@
             <version>${jmolecules.version}</version>
         </dependency>
 
-        <!-- Spotbugs -->
+        <!-- jqAssistant -->
         <dependency>
-            <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs-annotations</artifactId>
-            <version>${spotbugs-plugin.version}</version>
+            <groupId>org.jqassistant.contrib.plugin</groupId>
+            <artifactId>jqassistant-java-ddd-annotations</artifactId>
+            <version>${jqassistant-ddd.version}</version>
         </dependency>
 
-        <!-- Testing -->
+        <!-- ArchUnit -->
         <dependency>
             <groupId>com.tngtech.archunit</groupId>
             <artifactId>archunit-junit5</artifactId>
             <version>${archunit.version}</version>
+        </dependency>
+
+        <!-- jDepend -->
+        <dependency>
+            <groupId>jdepend</groupId>
+            <artifactId>jdepend</artifactId>
+            <version>${jdepend.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>jdepend-maven-plugin</artifactId>
+            <version>${jdepend-maven-plugin.version}</version>
+            <type>maven-plugin</type>
         </dependency>
     </dependencies>
 
