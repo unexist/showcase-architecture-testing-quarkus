@@ -14,7 +14,7 @@
 
     <properties>
         <!-- jMolecules -->
-        <jmolecules.version>1.1.0</jmolecules.version>
+        <jmolecules.version>1.4.0</jmolecules.version>
 
         <!-- ArchUnit -->
         <archunit.version>0.17.0</archunit.version>
