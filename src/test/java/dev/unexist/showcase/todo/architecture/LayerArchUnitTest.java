@@ -23,7 +23,7 @@ public class LayerArchUnitTest {
     private final JavaClasses classes = new ClassFileImporter().importPackages("dev.unexist");
 
     @Test
-    public void testLayeredArch() {
+    public void shoundVerifyLayeredArchitecture() {
         layeredArchitecture()
                 .layer("Application")
                 .definedBy("..application..")

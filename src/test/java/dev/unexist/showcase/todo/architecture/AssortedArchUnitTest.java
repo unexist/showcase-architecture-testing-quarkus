@@ -14,7 +14,7 @@ package dev.unexist.showcase.todo.architecture;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
-import net.jqwik.api.Property;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
@@ -28,10 +28,10 @@ public class AssortedArchUnitTest {
     static final ArchRule testShouldBePrefixedWithTest =
             methods()
                 .that()
-                    .areAnnotatedWith(Property.class)
+                    .areAnnotatedWith(Test.class)
                 .should()
-                    .haveNameMatching("^test.*")
-                .because("Test classes must be prefixed with 'Test'");
+                    .haveNameMatching("^should.*")
+                .because("Test classes must be prefixed with 'should'");
 
     @ArchTest
     static final ArchRule loggersShouldBeStaticAndPrivate =

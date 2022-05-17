@@ -25,7 +25,7 @@ public class CyclesArchUnitTest {
 
     @Test
     @Disabled
-    public void testNoCyclesBetweenSlices() {
+    public void shouldFindNoCyclesBetweenSlices() {
         slices()
                 .matching("..(cycle).(*)..")
                     .namingSlices("$2 of $1")
