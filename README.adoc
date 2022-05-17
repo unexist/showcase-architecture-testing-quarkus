@@ -6,6 +6,7 @@ This project holds examples for different types of architecture testing.
 
 - https://www.archunit.org[ArchUnit]
 - https://jqassistant.org[jqAssistant]
+- https://github.com/clarkware/jdepend[jDepend]
 
 == Architecture Decision Records
 
