@@ -17,7 +17,7 @@
         <jmolecules.version>1.4.0</jmolecules.version>
 
         <!-- ArchUnit -->
-        <archunit.version>0.17.0</archunit.version>
+        <archunit.version>0.23.1</archunit.version>
 
         <!-- jqAssistant -->
         <jqassistant.version>1.9.1</jqassistant.version>
