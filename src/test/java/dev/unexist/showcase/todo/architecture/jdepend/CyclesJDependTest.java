@@ -9,7 +9,7 @@
  * See the file LICENSE for details.
  **/
 
-package dev.unexist.showcase.todo.architecture;
+package dev.unexist.showcase.todo.architecture.jdepend;
 
 import jdepend.framework.JDepend;
 import org.junit.jupiter.api.Test;
