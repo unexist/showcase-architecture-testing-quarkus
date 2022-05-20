@@ -14,7 +14,6 @@ package dev.unexist.showcase.todo.architecture;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.junit.AnalyzeClasses;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.tngtech.archunit.library.dependencies.SlicesRuleDefinition.slices;
@@ -24,8 +23,7 @@ public class CyclesArchUnitTest {
     private final JavaClasses classes = new ClassFileImporter().importPackages("dev.unexist");
 
     @Test
-    @Disabled
-    public void shouldFindNoCyclesBetweenSlices() {
+    public void shouldFindNoCycles() {
         slices()
                 .matching("..(cycle).(*)..")
                     .namingSlices("$2 of $1")

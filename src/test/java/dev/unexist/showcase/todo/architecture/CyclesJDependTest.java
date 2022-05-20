@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CyclesJDependTest {
 
     @Test
-    public void testCycles() throws IOException {
+    public void shouldFindNoCycles() throws IOException {
         JDepend jdepend = new JDepend();
         jdepend.addDirectory("target/classes");
 
