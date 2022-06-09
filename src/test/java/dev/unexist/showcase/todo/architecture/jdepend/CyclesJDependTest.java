@@ -23,8 +23,8 @@ public class CyclesJDependTest {
     @Test
     public void shouldFindNoCycles() throws IOException {
         JDepend jdepend = new JDepend();
-        jdepend.addDirectory("target/classes");
 
+        jdepend.addDirectory("target/classes");
         jdepend.analyze();
 
         assertThat(jdepend.containsCycles()).isFalse();
