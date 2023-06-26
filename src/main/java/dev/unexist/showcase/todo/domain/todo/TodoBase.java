@@ -15,8 +15,8 @@ import org.jmolecules.architecture.layered.DomainLayer;
 import org.jmolecules.ddd.annotation.Entity;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.util.Objects;
 
 @DDD.Entity

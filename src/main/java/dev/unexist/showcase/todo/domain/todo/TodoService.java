@@ -14,8 +14,8 @@ package dev.unexist.showcase.todo.domain.todo;
 import org.jmolecules.architecture.layered.DomainLayer;
 import org.jqassistant.contrib.plugin.ddd.annotation.DDD;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import java.util.List;
 import java.util.Optional;
 
